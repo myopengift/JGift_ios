@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>myopengift.co.uk</title>
+    <link rel="shortcut icon" type="image/x-icon"
+      href="http://myopengift.co.uk/favicon.ico">
+  </head>
+  <body link="#00cccc" bgcolor="#ffffcc" background="http://myopengift.co.uk/sand.jpg"
+    alink="#00cccc" text="#000000" vlink="#339999">
+    <tt> </tt><tt><a href="index.html"><img moz-do-not-send="true"
+          src="http://www.myopengift.co.uk/fi-rr-arrow-small-left.svg" alt="" height="32" border="0"
+          align="middle" width="32"></a></tt><tt><br>
+    </tt><tt> </tt>
+    <div align="center">
+      <pre>Click the Arrow to go back.
+          </pre>
+    </div>
+	
+	
+	
+	
+    <tt> </tt>
+    <hr size="2" width="100%"><tt> </tt>
+	
+	<br>
+	<br>
+	<!---
+#########################################
+#                                       #
+#       JGift by Edward J. Taylor       #
+#                v0.5   _png            #
+#                                       #
+#########################################
+--->
+
+<script type="text/javascript">
+var widthOfImage = 250;
+var imageRotation = 25;
+var accelerationAcrossDevice;
+var touchAcrossPage;
+
+window.onload = init;
+
+
+
+
+
+function init() {
+	if(window.DeviceMotionEvent){
+		window.addEventListener("devicemotion", motion, false);
+	}else{
+	console.log("DeviceMotionEvent is not supported");
+	}
+}
+
+	function motion(event){
+		console.log("x moves of phone: "
+    + event.accelerationIncludingGravity.x)
+  
+	accelerationAcrossDevice = event.accelerationIncludingGravity.x
+	
+	function clip(num, min, max) {
+		return num <= min ? min : num >= max ? max : num;
+	}
+	imageRotation = clip(imageRotation, 0, 50)
+	if (accelerationAcrossDevice >= 0) {
+		imageRotation = imageRotation + 1;
+	}
+	else if(accelerationAcrossDevice <= 0) {
+		imageRotation = imageRotation - 1;
+	}
+	
+	if (imageRotation == 1) {
+		document.getElementById("myImage").src = 'gift_0001.png';
+	}
+	else if(imageRotation == 2) {
+		document.getElementById("myImage").src = 'gift_0002.png';
+	}
+	else if(imageRotation == 3) {
+		document.getElementById("myImage").src = 'gift_0003.png';
+	}
+	else if(imageRotation == 4) {
+		document.getElementById("myImage").src = 'gift_0004.png';
+	}
+	else if(imageRotation == 5) {
+		document.getElementById("myImage").src = 'gift_0005.png';
+	}
+	else if(imageRotation == 6) {
+		document.getElementById("myImage").src = 'gift_0006.png';
+	}
+	else if(imageRotation == 7) {
+		document.getElementById("myImage").src = 'gift_0007.png';
+	}
+	else if(imageRotation == 8) {
+		document.getElementById("myImage").src = 'gift_0008.png';
+	}
+	else if(imageRotation == 9) {
+		document.getElementById("myImage").src = 'gift_0009.png';
+	}
+	else if(imageRotation == 10) {
+		document.getElementById("myImage").src = 'gift_0010.png';
+	}
+	else if(imageRotation == 11) {
+		document.getElementById("myImage").src = 'gift_0011.png';
+	}
+	else if(imageRotation == 12) {
+		document.getElementById("myImage").src = 'gift_0012.png';
+	}
+	else if(imageRotation == 13) {
+		document.getElementById("myImage").src = 'gift_0013.png';
+	}
+	else if(imageRotation == 14) {
+		document.getElementById("myImage").src = 'gift_0014.png';
+	}
+	else if(imageRotation == 15) {
+		document.getElementById("myImage").src = 'gift_0015.png';
+	}
+	else if(imageRotation == 16) {
+		document.getElementById("myImage").src = 'gift_0016.png';
+	}
+	else if(imageRotation == 17) {
+		document.getElementById("myImage").src = 'gift_0017.png';
+	}
+	else if(imageRotation == 18) {
+		document.getElementById("myImage").src = 'gift_0018.png';
+	}
+	else if(imageRotation == 19) {
+		document.getElementById("myImage").src = 'gift_0019.png';
+	}
+	else if(imageRotation == 20) {
+		document.getElementById("myImage").src = 'gift_0020.png';
+	}
+	else if(imageRotation == 21) {
+		document.getElementById("myImage").src = 'gift_0021.png';
+	}
+	else if(imageRotation == 22) {
+		document.getElementById("myImage").src = 'gift_0022.png';
+	}
+	else if(imageRotation == 23) {
+		document.getElementById("myImage").src = 'gift_0023.png';
+	}
+	else if(imageRotation == 24) {
+		document.getElementById("myImage").src = 'gift_0024.png';
+	}
+	else if(imageRotation == 25) {
+		document.getElementById("myImage").src = 'gift_0025.png';
+	}
+	else if(imageRotation == 26) {
+		document.getElementById("myImage").src = 'gift_0026.png';
+	}
+	else if(imageRotation == 27) {
+		document.getElementById("myImage").src = 'gift_0027.png';
+	}
+	else if(imageRotation == 28) {
+		document.getElementById("myImage").src = 'gift_0028.png';
+	}
+	else if(imageRotation == 29) {
+		document.getElementById("myImage").src = 'gift_0029.png';
+	}
+	else if(imageRotation == 30) {
+		document.getElementById("myImage").src = 'gift_0030.png';
+	}
+	else if(imageRotation == 31) {
+		document.getElementById("myImage").src = 'gift_0031.png';
+	}
+	else if(imageRotation == 32) {
+		document.getElementById("myImage").src = 'gift_0032.png';
+	}
+	else if(imageRotation == 33) {
+		document.getElementById("myImage").src = 'gift_0033.png';
+	}
+	else if(imageRotation == 34) {
+		document.getElementById("myImage").src = 'gift_0034.png';
+	}
+	else if(imageRotation == 35) {
+		document.getElementById("myImage").src = 'gift_0035.png';
+	}
+	else if(imageRotation == 36) {
+		document.getElementById("myImage").src = 'gift_0036.png';
+	}
+	else if(imageRotation == 37) {
+		document.getElementById("myImage").src = 'gift_0037.png';
+	}
+	else if(imageRotation == 38) {
+		document.getElementById("myImage").src = 'gift_0038.png';
+	}
+	else if(imageRotation == 39) {
+		document.getElementById("myImage").src = 'gift_0039.png';
+	}
+	else if(imageRotation == 40) {
+		document.getElementById("myImage").src = 'gift_0040.png';
+	}
+	else if(imageRotation == 41) {
+		document.getElementById("myImage").src = 'gift_0041.png';
+	}
+	else if(imageRotation == 42) {
+		document.getElementById("myImage").src = 'gift_0042.png';
+	}
+	else if(imageRotation == 43) {
+		document.getElementById("myImage").src = 'gift_0043.png';
+	}
+	else if(imageRotation == 44) {
+		document.getElementById("myImage").src = 'gift_0044.png';
+	}
+	else if(imageRotation == 45) {
+		document.getElementById("myImage").src = 'gift_0045.png';
+	}
+	else if(imageRotation == 46) {
+		document.getElementById("myImage").src = 'gift_0046.png';
+	}
+	else if(imageRotation == 47) {
+		document.getElementById("myImage").src = 'gift_0047.png';
+	}
+	else if(imageRotation == 48) {
+		document.getElementById("myImage").src = 'gift_0048.png';
+	}
+	else if(imageRotation == 49) {
+		document.getElementById("myImage").src = 'gift_0049.png';
+	}
+	else if(imageRotation == 50) {
+		document.getElementById("myImage").src = 'gift_0050.png';
+	}
+}
+
+	
+</script>
+	</div>
+	
+	
+    <img id="myImage" src="gift_0025.png" alt="" height="500" width="500"> <tt><br>
+      </tt><tt></tt><br>
+      <tt> </tt><tt> </tt>
+  </body>
+</html>
