@@ -1,29 +1,25 @@
 <html>
-<!---
-#########################################
-#                                       #
-#       JGift by Edward J. Taylor       #
-#             v0.5   _png               #
-#                                       #
-#                                       #
-#	You need a list of .png		#
-#	in format gift_0001.png		#
-#       to gift_0050.png		#
-#       A guide on howto make 		#
-#	Them is at myopengift		#
-#		.co.uk			#
-#########################################
---->
 
+
+<!---
+
+#                                       
+#       JGift by Edward J. Taylor       
+#             v1.0   _png               
+#                                       
+#                               		
+# 
+--->
 <script type="text/javascript">
+
+var gift = "gift_";//set to file name start
+var ping = ".png";//set to image format
+
+
 var imageRotation = 25;
 var accelerationAcrossDevice;
 
 window.onload = init;
-
-
-
-
 
 function init() {
 	if(window.DeviceMotionEvent){
@@ -33,16 +29,14 @@ function init() {
 	}
 }
 
-	function motion(event){
-		console.log("x moves of phone: "
-    + event.accelerationIncludingGravity.x)
+function motion(event){
   
 	accelerationAcrossDevice = event.accelerationIncludingGravity.x
-	
 	function clip(num, min, max) {
 		return num <= min ? min : num >= max ? max : num;
 	}
-	imageRotation = clip(imageRotation, 0, 50)
+	imageRotation = clip(imageRotation, 1, 50)
+	
 	if (accelerationAcrossDevice >= 0) {
 		imageRotation = imageRotation + 1;
 	}
@@ -50,159 +44,19 @@ function init() {
 		imageRotation = imageRotation - 1;
 	}
 	
-	if (imageRotation == 1) {
-		document.getElementById("myImage").src = 'gift_0001.png';
+	
+	var irot = imageRotation.toString();
+
+	var imgname  = gift.concat(irot).concat(ping);
+	if (imgname == gift.concat(0).concat(ping)){
+		imgname = gift.concat(1).concat(ping);
+		}
+	else if (imgname == gift.concat(51).concat(ping)){
+		imgname = gift.concat(50).concat(ping);
 	}
-	else if(imageRotation == 2) {
-		document.getElementById("myImage").src = 'gift_0002.png';
-	}
-	else if(imageRotation == 3) {
-		document.getElementById("myImage").src = 'gift_0003.png';
-	}
-	else if(imageRotation == 4) {
-		document.getElementById("myImage").src = 'gift_0004.png';
-	}
-	else if(imageRotation == 5) {
-		document.getElementById("myImage").src = 'gift_0005.png';
-	}
-	else if(imageRotation == 6) {
-		document.getElementById("myImage").src = 'gift_0006.png';
-	}
-	else if(imageRotation == 7) {
-		document.getElementById("myImage").src = 'gift_0007.png';
-	}
-	else if(imageRotation == 8) {
-		document.getElementById("myImage").src = 'gift_0008.png';
-	}
-	else if(imageRotation == 9) {
-		document.getElementById("myImage").src = 'gift_0009.png';
-	}
-	else if(imageRotation == 10) {
-		document.getElementById("myImage").src = 'gift_0010.png';
-	}
-	else if(imageRotation == 11) {
-		document.getElementById("myImage").src = 'gift_0011.png';
-	}
-	else if(imageRotation == 12) {
-		document.getElementById("myImage").src = 'gift_0012.png';
-	}
-	else if(imageRotation == 13) {
-		document.getElementById("myImage").src = 'gift_0013.png';
-	}
-	else if(imageRotation == 14) {
-		document.getElementById("myImage").src = 'gift_0014.png';
-	}
-	else if(imageRotation == 15) {
-		document.getElementById("myImage").src = 'gift_0015.png';
-	}
-	else if(imageRotation == 16) {
-		document.getElementById("myImage").src = 'gift_0016.png';
-	}
-	else if(imageRotation == 17) {
-		document.getElementById("myImage").src = 'gift_0017.png';
-	}
-	else if(imageRotation == 18) {
-		document.getElementById("myImage").src = 'gift_0018.png';
-	}
-	else if(imageRotation == 19) {
-		document.getElementById("myImage").src = 'gift_0019.png';
-	}
-	else if(imageRotation == 20) {
-		document.getElementById("myImage").src = 'gift_0020.png';
-	}
-	else if(imageRotation == 21) {
-		document.getElementById("myImage").src = 'gift_0021.png';
-	}
-	else if(imageRotation == 22) {
-		document.getElementById("myImage").src = 'gift_0022.png';
-	}
-	else if(imageRotation == 23) {
-		document.getElementById("myImage").src = 'gift_0023.png';
-	}
-	else if(imageRotation == 24) {
-		document.getElementById("myImage").src = 'gift_0024.png';
-	}
-	else if(imageRotation == 25) {
-		document.getElementById("myImage").src = 'gift_0025.png';
-	}
-	else if(imageRotation == 26) {
-		document.getElementById("myImage").src = 'gift_0026.png';
-	}
-	else if(imageRotation == 27) {
-		document.getElementById("myImage").src = 'gift_0027.png';
-	}
-	else if(imageRotation == 28) {
-		document.getElementById("myImage").src = 'gift_0028.png';
-	}
-	else if(imageRotation == 29) {
-		document.getElementById("myImage").src = 'gift_0029.png';
-	}
-	else if(imageRotation == 30) {
-		document.getElementById("myImage").src = 'gift_0030.png';
-	}
-	else if(imageRotation == 31) {
-		document.getElementById("myImage").src = 'gift_0031.png';
-	}
-	else if(imageRotation == 32) {
-		document.getElementById("myImage").src = 'gift_0032.png';
-	}
-	else if(imageRotation == 33) {
-		document.getElementById("myImage").src = 'gift_0033.png';
-	}
-	else if(imageRotation == 34) {
-		document.getElementById("myImage").src = 'gift_0034.png';
-	}
-	else if(imageRotation == 35) {
-		document.getElementById("myImage").src = 'gift_0035.png';
-	}
-	else if(imageRotation == 36) {
-		document.getElementById("myImage").src = 'gift_0036.png';
-	}
-	else if(imageRotation == 37) {
-		document.getElementById("myImage").src = 'gift_0037.png';
-	}
-	else if(imageRotation == 38) {
-		document.getElementById("myImage").src = 'gift_0038.png';
-	}
-	else if(imageRotation == 39) {
-		document.getElementById("myImage").src = 'gift_0039.png';
-	}
-	else if(imageRotation == 40) {
-		document.getElementById("myImage").src = 'gift_0040.png';
-	}
-	else if(imageRotation == 41) {
-		document.getElementById("myImage").src = 'gift_0041.png';
-	}
-	else if(imageRotation == 42) {
-		document.getElementById("myImage").src = 'gift_0042.png';
-	}
-	else if(imageRotation == 43) {
-		document.getElementById("myImage").src = 'gift_0043.png';
-	}
-	else if(imageRotation == 44) {
-		document.getElementById("myImage").src = 'gift_0044.png';
-	}
-	else if(imageRotation == 45) {
-		document.getElementById("myImage").src = 'gift_0045.png';
-	}
-	else if(imageRotation == 46) {
-		document.getElementById("myImage").src = 'gift_0046.png';
-	}
-	else if(imageRotation == 47) {
-		document.getElementById("myImage").src = 'gift_0047.png';
-	}
-	else if(imageRotation == 48) {
-		document.getElementById("myImage").src = 'gift_0048.png';
-	}
-	else if(imageRotation == 49) {
-		document.getElementById("myImage").src = 'gift_0049.png';
-	}
-	else if(imageRotation == 50) {
-		document.getElementById("myImage").src = 'gift_0050.png';
-	}
+	document.getElementById("myImage").src = imgname
 }
 
-	
 </script>
-  </body><img id="myImage" src="gift_0025.png" alt="" height="500" width="500"> <!---//use your width and height here!!--->
+  </body><p style="text-align:center"><img id="myImage" src="gift_25.png" alt="" height="500" width="500"> <!---//use your width and height here!!---></p?
 </html>
