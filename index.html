@@ -7,34 +7,35 @@
 #         open gift books inc.                       
 #                               		
 --->
-<script type="javascript">
+<script type="text/javascript">
 //User Settable Variables
 
 var gift = "snowglobe_";			//set to file name start
 var ping = ".png";			//set to image format
 var maxImageNumber = 360;		//set degrees 
 //Difine Script Variables
-var imageRotation = (maxImageNumber / 2);
-var count = 5 ;                           //set degrees to move at a time
+var imageRotation = 90;
+var count = 5;                           //set degrees to move at a time
 //Environment Variables
 
-var accelerationAcrossDevice;
+
 
 //Start!!!
 window.onload = init;
 
-
+var accelerationAcrossDevice;
 
 function init() {
 
-        setTimeout("myInterval()", 10000);
 	if(window.DeviceMotionEvent){
 		window.addEventListener("devicemotion", motion, false);
+	}else{
+	console.log("DeviceMotionEvent is not supported");
 	}
 
 }
 
-function myInterval(){
+function motion(event){
 
 
   
@@ -42,10 +43,11 @@ function myInterval(){
 
 
 
-	if (accelerationAcrossDevice >= 0.5) {
+	if (accelerationAcrossDevice >= 0) {
 		imageRotation = (imageRotation + count);
 	}
-	else if(accelerationAcrossDevice <= -0.5) {
+
+	else if(accelerationAcrossDevice <= 0) {
 		imageRotation = (imageRotation - count);
 	}
        
@@ -54,7 +56,7 @@ function myInterval(){
 		imageRotation = 0;
 	}
 	
-	if (imageRotation <= -5count) {
+	if (imageRotation <= -count) {
 		imageRotation = (maxImageNumber - count);
 	}
 			
