@@ -3,7 +3,7 @@
 <!---
 #                                       
 #       JGift by Edward J. Taylor       
-#             v1.1   _png               
+#             v1.3   _png               
 #                                       
 #                               		
 --->
@@ -39,7 +39,7 @@ function motion(event){
 	function clip(num, min, max) {
 		return num <= min ? min : num >= max ? max : num;
 	}
-	imageRotation = clip(imageRotation, 2, maxImageNumber -1)
+	imageRotation = clip(imageRotation, 1, maxImageNumber)
 	
 	if (accelerationAcrossDevice >= 0) {
 		imageRotation = imageRotation + 1;
