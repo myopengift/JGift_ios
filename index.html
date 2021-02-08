@@ -5,7 +5,7 @@
 #       JGift by Edward J. Taylor       
 #         version Jelly Belly           
 #         open gift books inc.                       
-#                               		
+#                          fully working!!!     		
 --->
 <script type="text/javascript">
 //User Settable Variables
@@ -26,9 +26,11 @@ window.onload = init;
 var accelerationAcrossDevice;
 
 function init() {
-      
-        window.addEventListener("deviceorientation", handleOrientation, true);
-
+if(window.DeviceMotionEvent){
+        window.addEventListener("deviceorientation", handleOrientation, false);
+}else{
+  console.log("DeviceMotionEvent is not supported");
+}
 }
 
 function handleOrientation(event){
@@ -36,18 +38,10 @@ function handleOrientation(event){
 
   
 	imageRotation = event.beta;
-        imageRotation = Math.round(imagerRotatin);
+        imageRotation = Math.round(imageRotation);
         
 	
 	
-	if (imageRotation >= maxImageNumber) {
-		imageRotation = 0;
-	}
-	
-	if (imageRotation <= -count) {
-		imageRotation = (maxImageNumber - count);
-	}
-			
 	var irot = imageRotation.toString();
 	
 
@@ -59,4 +53,4 @@ function handleOrientation(event){
 
 </script>
   </body><p style="text-align:center"><img id="myImage" src="snowglobe_180.jpg" alt="" height="500" width="500"></p?
-</html>	
+</html>			
