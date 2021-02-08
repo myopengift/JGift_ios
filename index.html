@@ -12,11 +12,10 @@
 
 var gift = "snowglobe_";			//set to file name start
 var ping = ".png";			//set to image format
-var maxImageNumber = 360;		//set the number of images
-var fullRotation = 1;               	//set to 1 if you wanta 360Â° JGift
+var maxImageNumber = 360;		//set degrees 
 //Difine Script Variables
 var imageRotation = (maxImageNumber / 2);
-
+var count = 5                            //set degrees to move at a time
 //Environment Variables
 
 var accelerationAcrossDevice;
@@ -28,8 +27,6 @@ window.onload = init;
 function init() {
 	if(window.DeviceMotionEvent){
 		window.addEventListener("devicemotion", motion, false);
-	}else{
-	console.log("DeviceMotionEvent is not supported");
 	}
 }
 function motion(event){
@@ -37,13 +34,13 @@ function motion(event){
 	accelerationAcrossDevice = event.accelerationIncludingGravity.x
 
 	if (accelerationAcrossDevice >= 0) {
-		imageRotation = imageRotation + 5;
+		imageRotation = imageRotation + count;
 	}
 	else if(accelerationAcrossDevice <= 0) {
-		imageRotation = imageRotation - 5;
+		imageRotation = imageRotation - count;
 	}
 	
-	if (imageRotation >= 360) {
+	if (imageRotation >= maxImageNumber) {
 		imageRotation = 0;
 	}
 	
