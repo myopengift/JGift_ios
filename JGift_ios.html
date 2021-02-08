@@ -3,8 +3,8 @@
 <!---
 #                                       
 #       JGift by Edward J. Taylor       
-#             v1.3   _png               
-#                                       
+#             v1.4b   _png               
+#          8th Feburary 2021                       
 #                               		
 --->
 <script type="text/javascript">
@@ -15,10 +15,10 @@ var ping = ".png";			//set to image format
 var maxImageNumber = 360;		//set the number of images
 var fullRotation = 1;               	//set to 1 if you wanta 360° JGift
 //Difine Script Variables
-var imageRotation = (maxImageNumber / 2);
-
+var rotate 
+var bignumber
 //Environment Variables
-
+var irot
 var accelerationAcrossDevice;
 var go_across
 //Start!!!
@@ -28,8 +28,6 @@ window.onload = init;
 function init() {
 	if(window.DeviceMotionEvent){
 		window.addEventListener("devicemotion", motion, false);
-	}else{
-	console.log("DeviceMotionEvent is not supported");
 	}
 }
 
@@ -39,27 +37,32 @@ function motion(event){
 	function clip(num, min, max) {
 		return num <= min ? min : num >= max ? max : num;
 	}
-	imageRotation = clip(imageRotation, 1, maxImageNumber)
+	
 	
 	if (accelerationAcrossDevice >= 0) {
-		imageRotation = imageRotation + 1;
+		rotate = rotate + 1;
 	}
 	else if(accelerationAcrossDevice <= 0) {
-		imageRotation = imageRotation - 1;
+		rotate = rotate + 1;
 	}
-
-	
-	
-	if(imageRotation == maxImageNumber){
-		irot = 1;
+	else if(accelerationAcrossDevice = 0) {
+		rotate = 0
 	}
-
-
-	var irot = imageRotation.toString();
+	irot = irot + rotate
+	
+	
+	if(irot >= maxImageNumber){
+		irot = 2;
+	}
+	if(irot <=0){
+		irot = maxImageNumber - 1;
+	}
+	irot = clip(irot, 1, maxImageNumber)
+	var bignumber = irot.toString();
 	
 	
 	
-	var imgname  = gift.concat(irot).concat(ping);
+	var imgname  = gift.concat(bignumber).concat(ping);
 	
 	
 
