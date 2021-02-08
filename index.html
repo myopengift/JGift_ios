@@ -15,7 +15,7 @@ var ping = ".png";			//set to image format
 var maxImageNumber = 360;		//set degrees 
 //Difine Script Variables
 var imageRotation = (maxImageNumber / 2);
-var count = 5                            //set degrees to move at a time
+var count = 5 ;                           //set degrees to move at a time
 //Environment Variables
 
 var accelerationAcrossDevice;
@@ -34,10 +34,10 @@ function motion(event){
 	accelerationAcrossDevice = event.accelerationIncludingGravity.x
 
 	if (accelerationAcrossDevice >= 0) {
-		imageRotation = imageRotation + count;
+		imageRotation = (imageRotation + count);
 	}
 	else if(accelerationAcrossDevice <= 0) {
-		imageRotation = imageRotation - count;
+		imageRotation = (imageRotation - count);
 	}
 	
 	if (imageRotation >= maxImageNumber) {
