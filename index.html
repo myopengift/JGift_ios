@@ -1,3 +1,4 @@
+
 <html>
 
 <!---
@@ -28,6 +29,8 @@ window.onload = init;
 function init() {
 	if(window.DeviceMotionEvent){
 		window.addEventListener("devicemotion", motion, false);
+	}else{
+	console.log("DeviceMotionEvent is not supported");
 	}
 }
 function motion(event){
@@ -35,16 +38,20 @@ function motion(event){
 	accelerationAcrossDevice = event.accelerationIncludingGravity.x
 
 	if (accelerationAcrossDevice >= 0) {
-		imageRotation = imageRotation + 1;
+		imageRotation = imageRotation + 5;
 	}
 	else if(accelerationAcrossDevice <= 0) {
-		imageRotation = imageRotation - 1;
+		imageRotation = imageRotation - 5;
 	}
 	
 	if (imageRotation >= 360) {
 		imageRotation = 0;
 	}
-		
+	
+	if (imageRotation <=5) {
+		imageRotation = 360;
+	}
+			
 	var irot = imageRotation.toString();
 	
 
