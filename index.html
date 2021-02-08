@@ -32,10 +32,14 @@ function init() {
 	console.log("DeviceMotionEvent is not supported");
 	}
 }
+	
 function motion(event){
-  
+	
 	accelerationAcrossDevice = event.accelerationIncludingGravity.x
-
+}
+				 
+function updateScreen(){
+	
 	if (accelerationAcrossDevice >= 0) {
 		imageRotation = imageRotation + 5;
 	}
@@ -56,10 +60,12 @@ function motion(event){
 
 	var imgname  = gift.concat(irot).concat(ping);
 	
-
+	
 	document.getElementById("myImage").src = imgname
-}
+	
+	setTimeout(updateScreen(), 500)
+	}
 
 </script>
   </body><p style="text-align:center"><img id="myImage" src="snowglobe_180.png" alt="" height="500" width="500"></p?
-</html>	
+ </html>
