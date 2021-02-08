@@ -27,7 +27,7 @@ window.onload = init;
 
 function init() {
 
-        setTimeout("myInterval()", 10000)
+        setTimeout("myInterval()", 10000);
 	if(window.DeviceMotionEvent){
 		window.addEventListener("devicemotion", motion, false);
 	}
@@ -48,14 +48,14 @@ function myInterval(){
 	else if(accelerationAcrossDevice <= -0.5) {
 		imageRotation = (imageRotation - count);
 	}
-        accelerationAcrossDevice = 0
+       
 	
 	if (imageRotation >= maxImageNumber) {
 		imageRotation = 0;
 	}
 	
 	if (imageRotation <= -5count) {
-		imageRotation = maxImageNumber - 5=count;
+		imageRotation = (maxImageNumber - count);
 	}
 			
 	var irot = imageRotation.toString();
@@ -69,4 +69,4 @@ function myInterval(){
 
 </script>
   </body><p style="text-align:center"><img id="myImage" src="snowglobe_180.png" alt="" height="500" width="500"></p?
-</html>				
+</html>			
