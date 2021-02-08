@@ -1,25 +1,29 @@
 <html>
 
-
 <!---
-
 #                                       
 #       JGift by Edward J. Taylor       
-#             v1.0   _png               
+#             v1.1   _png               
 #                                       
 #                               		
-# 
 --->
 <script type="text/javascript">
+//User Settable Variables
 
-var gift = "gift_";//set to file name start
-var ping = ".png";//set to image format
+var gift = "gift_";			//set to file name start
+var ping = ".png";			//set to image format
+var maxImageNumber = 50			//set the number of images
 
+//Difine Script Variables
+var imageRotation = (maxImageNumber / 2);
 
-var imageRotation = 25;
+//Environment Variables
+
 var accelerationAcrossDevice;
 
+//Start!!!
 window.onload = init;
+
 
 function init() {
 	if(window.DeviceMotionEvent){
@@ -35,7 +39,7 @@ function motion(event){
 	function clip(num, min, max) {
 		return num <= min ? min : num >= max ? max : num;
 	}
-	imageRotation = clip(imageRotation, 1, 50)
+	imageRotation = clip(imageRotation, 1, maxImageNumber)
 	
 	if (accelerationAcrossDevice >= 0) {
 		imageRotation = imageRotation + 1;
@@ -51,12 +55,12 @@ function motion(event){
 	if (imgname == gift.concat(0).concat(ping)){
 		imgname = gift.concat(1).concat(ping);
 		}
-	else if (imgname == gift.concat(51).concat(ping)){
-		imgname = gift.concat(50).concat(ping);
+	else if (imgname == gift.concat(maxImageNumber + 1).concat(ping)){
+		imgname = gift.concat(maxImageNumber - 1).concat(ping);
 	}
 	document.getElementById("myImage").src = imgname
 }
 
 </script>
-  </body><p style="text-align:center"><img id="myImage" src="gift_25.png" alt="" height="500" width="500"> <!---//use your width and height here!!---></p?
+  </body><p style="text-align:center"><img id="myImage" src="gift_25.png" alt="" height="500" width="500"></p?
 </html>
