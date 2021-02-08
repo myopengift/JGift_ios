@@ -1,4 +1,4 @@
-<html>
+html>
 
 <!---
 #                                       
@@ -47,13 +47,23 @@ function motion(event){
 	else if(accelerationAcrossDevice <= 0) {
 		imageRotation = imageRotation - 1;
 	}
-	
-	if (irot >= maxImageNumber) {
-	    irot= 1 
-	}
-	
-	var irot = imageRotation.toString();
 
+	
+	
+	if (imageRotation == 0){
+		irot = 1;
+	}
+	else if(imageRotation == maxImageNumber){
+		irot = 1;
+	}
+	else if(imageRotation == maxImageNumber+1){
+		irot = 1;
+	}
+
+	var irot = imageRotation.toString();
+	
+	
+	
 	var imgname  = gift.concat(irot).concat(ping);
 	
 	
