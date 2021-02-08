@@ -12,8 +12,8 @@
 
 var gift = "gift_";			//set to file name start
 var ping = ".png";			//set to image format
-var maxImageNumber = 50;			//set the number of images
-var fullRotation = False;                //set to truw if you wanta 360° JGift
+var maxImageNumber = 50;		//set the number of images
+var fullRotation = 0;               	//set to 1 if you wanta 360° JGift
 //Difine Script Variables
 var imageRotation = (maxImageNumber / 2);
 
@@ -55,10 +55,10 @@ function motion(event){
 	if (imgname == gift.concat(0).concat(ping)){
 		imgname = gift.concat(1).concat(ping);
 		}
-	else if ((fullRotation = True) && (imgname == gift.concat(maxImageNumber + 1).concat(ping))){
+	else if ((fullRotation = 1) && (imgname == gift.concat(maxImageNumber + 1).concat(ping))){
 		imgname = gift.concat(1).concat(ping);
 	}
-	else if ((fullRotation = False) && (imgname == gift.concat(maxImageNumber + 1).concat(ping))){
+	else if ((fullRotation = 0) && (imgname == gift.concat(maxImageNumber + 1).concat(ping))){
 		imgname = gift.concat(maxImageNumber - 1).concat(ping);
 	}
 	document.getElementById("myImage").src = imgname
