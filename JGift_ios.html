@@ -55,10 +55,10 @@ function motion(event){
 	if (imgname == gift.concat(0).concat(ping)){
 		imgname = gift.concat(1).concat(ping);
 		}
-	else if ((fullRotation = True && (imgname == gift.concat(maxImageNumber + 1).concat(ping))){
+	else if ((fullRotation = True) && (imgname == gift.concat(maxImageNumber + 1).concat(ping))){
 		imgname = gift.concat(1).concat(ping);
 	}
-	else if ((fullRotation = False && (imgname == gift.concat(maxImageNumber + 1).concat(ping))){
+	else if ((fullRotation = False) && (imgname == gift.concat(maxImageNumber + 1).concat(ping))){
 		imgname = gift.concat(maxImageNumber - 1).concat(ping);
 	}
 	document.getElementById("myImage").src = imgname
