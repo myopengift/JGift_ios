@@ -37,16 +37,20 @@ function motion(event){
 	accelerationAcrossDevice = event.accelerationIncludingGravity.x
 
 	if (accelerationAcrossDevice >= 0) {
-		imageRotation = imageRotation + 1;
+		imageRotation = imageRotation + 5;
 	}
 	else if(accelerationAcrossDevice <= 0) {
-		imageRotation = imageRotation - 1;
+		imageRotation = imageRotation - 5;
 	}
 	
 	if (imageRotation >= 360) {
 		imageRotation = 0;
 	}
-		
+
+	if (imageRotation <= -5) {
+		imageRotation = 360;
+	}
+
 	var irot = imageRotation.toString();
 	
 
@@ -58,4 +62,4 @@ function motion(event){
 
 </script>
   </body><p style="text-align:center"><img id="myImage" src="snowglobe_180.png" alt="" height="500" width="500"></p?
-</html>
+</html>	
