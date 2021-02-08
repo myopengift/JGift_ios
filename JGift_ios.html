@@ -56,7 +56,7 @@ function motion(event){
 	if ((fullRotation == 0) && (imgname == gift.concat(0).concat(ping))){
 		imgname = gift.concat(1).concat(ping);
 		}
-	else if((fullRotation == 1) && (imgname == gift.concat(maxImageNumber).concat(ping))){
+	else if((fullRotation == 1) && (imgname == gift.concat(maxImageNumber + 1).concat(ping))){
 		imgname = gift.concat(1).concat(ping);
 		}
 
@@ -64,8 +64,13 @@ function motion(event){
 		imgname = gift.concat(maxImageNumber).concat(ping);
 	}
 	else if((fullRotation == 1) && (imgname == gift.concat(0).concat(ping))){
-		imgname = gift.concat(maxImageNumber - 1).concat(ping);
+		imgname = gift.concat(1).concat(ping);
 	}
+
+	else if((fullRotation == 1) && (imgname == gift.concat(maxImageNumber).concat(ping))){
+		imgname = gift.concat(1).concat(ping);
+	}
+	
 	document.getElementById("myImage").src = imgname
 }
 
