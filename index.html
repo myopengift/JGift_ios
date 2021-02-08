@@ -5,52 +5,29 @@
 #       JGift by Edward J. Taylor       
 #         version Jelly Belly           
 #         open gift books inc.                       
-#                          fully working!!!     		
+#                               		
 --->
 <script type="text/javascript">
-//User Settable Variables
-
 var gift = "snowglobe_";			//set to file name start
 var ping = ".jpg";			//set to image format
-var maxImageNumber = 360;		//set degrees 
-//Difine Script Variables
 var imageRotation = 90;
-var count = 1;                           //set degrees to move at a time
-//Environment Variables
-
-
-
-//Start!!!
 window.onload = init;
-
 var accelerationAcrossDevice;
-
 function init() {
 if(window.DeviceMotionEvent){
         window.addEventListener("deviceorientation", handleOrientation, false);
 }else{
-  console.log("DeviceMotionEvent is not supported");
+         console.log("DeviceMotionEvent is not supported");
 }
 }
-
-function handleOrientation(event){
-
-
-  
-	imageRotation = event.beta;
+function handleOrientation(event){ 
+	imageRotation = event.alpha;
         imageRotation = Math.round(imageRotation);
-        
-	
-	
-	var irot = imageRotation.toString();
-	
-
+        imageRotation = Math.abs(imageRotation); 
+        var irot = imageRotation.toString();
 	var imgname  = gift.concat(irot).concat(ping);
-	
-
-	document.getElementById("myImage").src = imgname
+	document.getElementById("myImage").src = imgname;    
 }
-
 </script>
   </body><p style="text-align:center"><img id="myImage" src="snowglobe_180.jpg" alt="" height="500" width="500"></p?
-</html>			
+</html>		
