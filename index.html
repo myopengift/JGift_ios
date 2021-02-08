@@ -1,4 +1,3 @@
-
 <html>
 
 <!---
@@ -48,8 +47,8 @@ function motion(event){
 		imageRotation = 0;
 	}
 	
-	if (imageRotation <=5) {
-		imageRotation = 360;
+	if (imageRotation <= -5 ) {
+		imageRotation = maxImageNumber;
 	}
 			
 	var irot = imageRotation.toString();
