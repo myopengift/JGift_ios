@@ -28,8 +28,6 @@ window.onload = init;
 function init() {
 	if(window.DeviceMotionEvent){
 		window.addEventListener("devicemotion", motion, false);
-	}else{
-	console.log("DeviceMotionEvent is not supported");
 	}
 }
 function motion(event){
