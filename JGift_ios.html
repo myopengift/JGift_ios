@@ -3,8 +3,8 @@
 <!---
 #                                       
 #       JGift by Edward J. Taylor       
-#             v1.4b   _png               
-#          8th Feburary 2021                       
+#             v1.1   _png               
+#                                       
 #                               		
 --->
 <script type="text/javascript">
@@ -12,15 +12,15 @@
 
 var gift = "snowglobe_";			//set to file name start
 var ping = ".png";			//set to image format
-var maxImageNumber = 360;		//set the number of images
-var fullRotation = 1;               	//set to 1 if you wanta 360° JGift
+var maxImageNumber = 360			//set the number of images
+var fullRotation = False                //set to truw if you wanta 360° JGift
 //Difine Script Variables
-var rotate 
-var bignumber
+var imageRotation = (maxImageNumber / 2);
+
 //Environment Variables
-var irot
+
 var accelerationAcrossDevice;
-var go_across
+
 //Start!!!
 window.onload = init;
 
@@ -28,6 +28,8 @@ window.onload = init;
 function init() {
 	if(window.DeviceMotionEvent){
 		window.addEventListener("devicemotion", motion, false);
+	}else{
+	console.log("DeviceMotionEvent is not supported");
 	}
 }
 
@@ -37,38 +39,31 @@ function motion(event){
 	function clip(num, min, max) {
 		return num <= min ? min : num >= max ? max : num;
 	}
-	
+	imageRotation = clip(imageRotation, 1, maxImageNumber)
 	
 	if (accelerationAcrossDevice >= 0) {
-		rotate = rotate + 1;
+		imageRotation = imageRotation + 1;
 	}
 	else if(accelerationAcrossDevice <= 0) {
-		rotate = rotate + 1;
+		imageRotation = imageRotation - 1;
 	}
-	else if(accelerationAcrossDevice = 0) {
-		rotate = 0
-	}
-	irot = irot + rotate
 	
 	
-	if(irot >= maxImageNumber){
-		irot = 2;
-	}
-	if(irot <=0){
-		irot = maxImageNumber - 1;
-	}
-	irot = clip(irot, 1, maxImageNumber)
-	var bignumber = irot.toString();
-	
-	
-	
-	var imgname  = gift.concat(bignumber).concat(ping);
-	
-	
+	var irot = imageRotation.toString();
 
+	var imgname  = gift.concat(irot).concat(ping);
+	if (imgname == gift.concat(0).concat(ping)){
+		imgname = gift.concat(1).concat(ping);
+		}
+	else if ((fullRotation = True) && (imgname == gift.concat(maxImageNumber + 1).concat(ping))){
+		imgname = gift.concat(1).concat(ping);
+	}
+	else if ((fullRotation = False) && (imgname == gift.concat(maxImageNumber + 1).concat(ping))){
+		imgname = gift.concat(maxImageNumber - 1).concat(ping);
+	}
 	document.getElementById("myImage").src = imgname
 }
 
 </script>
-  </body><p style="text-align:center"><img id="myImage" src="snowglobe_180.png" alt="" height="500" width="500"></p?
+  </body><p style="text-align:center"><img id="myImage" src="gift_25.png" alt="" height="500" width="500"></p?
 </html>
