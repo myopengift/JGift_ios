@@ -1,1 +1,61 @@
+<html>
 
+<!---
+#                                       
+#       JGift by Edward J. Taylor       
+#                v360            
+#         open gift books inc.                       
+#                               		
+--->
+<script type="text/javascript">
+//User Settable Variables
+
+var gift = "snowglobe_";			//set to file name start
+var ping = ".png";			//set to image format
+var maxImageNumber = 360;		//set the number of images
+var fullRotation = 1;               	//set to 1 if you wanta 360Â° JGift
+//Difine Script Variables
+var imageRotation = (maxImageNumber / 2);
+
+//Environment Variables
+
+var accelerationAcrossDevice;
+
+//Start!!!
+window.onload = init;
+
+
+function init() {
+	if(window.DeviceMotionEvent){
+		window.addEventListener("devicemotion", motion, false);
+	}else{
+	console.log("DeviceMotionEvent is not supported");
+	}
+}
+function motion(event){
+  
+	accelerationAcrossDevice = event.accelerationIncludingGravity.x
+
+	if (accelerationAcrossDevice >= 0) {
+		imageRotation = imageRotation + 1;
+	}
+	else if(accelerationAcrossDevice <= 0) {
+		imageRotation = imageRotation - 1;
+	}
+	
+	if (imageRotation >= 360) {
+		imageRotation = 0;
+	}
+		
+	var irot = imageRotation.toString();
+	
+
+	var imgname  = gift.concat(irot).concat(ping);
+	
+
+	document.getElementById("myImage").src = imgname
+}
+
+</script>
+  </body><p style="text-align:center"><img id="myImage" src="snowglobe_180.png" alt="" height="500" width="500"></p?
+</html>
