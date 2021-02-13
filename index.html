@@ -22,8 +22,7 @@ if(window.DeviceMotionEvent){
 }
 function handleOrientation(event){ 
 	imageRotation = event.alpha;
-        imageRotation = Math.round(imageRotation);
-        imageRotation = Math.abs(imageRotation); 
+        imageRotation = Math.round(imageRotation); 
         var irot = imageRotation.toString();
 	var imgname  = gift.concat(irot).concat(ping);
 	document.getElementById("myImage").src = imgname;    
