@@ -8,24 +8,166 @@
 #                               		
 --->
 <script type="text/javascript">
-var gift = "snowglobe_";			//set to file name start
-var ping = ".jpg";			//set to image format
-var imageRotation = 90;
+var gift = "gift_";			//set to file name start
+var ping = ".png";			//set to image format
+var imageRotation = 22;
 window.onload = init;
 function init() {
 if(window.DeviceMotionEvent){
-        window.addEventListener("deviceorientation", handleOrientation, false);
+  window.addEventListener("devicemotion", motion, false);
 }else{
-         console.log("DeviceMotionEvent is not supported");
+  console.log("DeviceMotionEvent is not supported");
 }
 }
-function handleOrientation(event){ 
-	imageRotation = event.alpha;
+function motion(event){ 
+	imageRotation = event.accelerationIncludingGravity.x
         imageRotation = Math.round(imageRotation); 
+	xA = imageRotation;
+	if xA >= 22 {
+	    imageRotation = 44;
+	}
+	if xA = 22 {
+	    imageRotation = 44;
+	}
+	if xA = 21 {
+	    imageRotation = 43;
+	}
+	if xA = 20 {
+	    imageRotation = 42;
+	}
+	if xA = 19 {
+	    imageRotation = 41;
+	}
+	if xA = 18 {
+	    imageRotation = 40;
+	}
+	if xA = 17 {
+	    imageRotation = 39;
+	}
+	if xA = 16 {
+	    imageRotation = 38;
+	}
+	if xA = 15 {
+	    imageRotation = 37;
+	}
+	if xA = 14 {
+	    imageRotation = 36;
+	}
+	if xA = 13 {
+	    imageRotation = 35;
+	}
+	if xA = 12 {
+	    imageRotation = 34;
+	}
+	if xA = 11 {
+	    imageRotation = 33;
+	}
+	if xA = 10 {
+	    imageRotation = 32;
+	}
+	if xA = 9 {
+	    imageRotation = 31;
+	}
+	if xA = 8 {
+	    imageRotation = 30;
+	}
+	if xA = 7 {
+	    imageRotation = 29;
+	}
+	if xA = 6 {
+	    imageRotation = 28;
+	}
+	if xA = 5 {
+	    imageRotation = 27;
+	}
+	if xA = 4 {
+	    imageRotation = 26;
+	}
+	if xA = 3 {
+	    imageRotation = 25;
+	}
+	if xA = 2 {
+	    imageRotation = 24;
+	}
+	if xA = 1 {
+	    imageRotation = 23;
+	}
+	if xA = 0 {
+	    imageRotation = 22;
+	}
+	if xA = -1 {
+	    imageRotation = 21;
+	}
+	if xA = -2 {
+	    imageRotation = 20;
+	}
+	if xA = -3 {
+	    imageRotation = 19;
+	}
+	if xA = -4 {
+	    imageRotation = 18;
+	}
+	if xA = -5 {
+	    imageRotation = 17;
+	}
+	if xA = -6 {
+	    imageRotation = 16;
+	}
+	if xA = -7 {
+	    imageRotation = 15;
+	}
+	if xA = -8 {
+	    imageRotation = 14;
+	}
+	if xA = -9 {
+	    imageRotation = 13;
+	}
+	if xA = -10 {
+	    imageRotation = 12;
+	}
+	if xA = -11 {
+	    imageRotation = 11;
+	}
+	if xA = -12 {
+	    imageRotation = 10;
+	}
+	if xA = -13 {
+	    imageRotation = 9;
+	}
+	if xA = -14 {
+	    imageRotation = 8;
+	}
+	if xA = -15 {
+	    imageRotation = 7;
+	}
+	if xA = -16 {
+	    imageRotation = 6;
+	}
+	if xA = -17 {
+	    imageRotation = 5;
+	}
+	if xA = -18 {
+	    imageRotation = 4;
+	}
+	if xA = -19 {
+	    imageRotation = 3;
+	}
+	if xA = -20 {
+	    imageRotation = 2;
+	}
+	if xA = -21 {
+	    imageRotation = 1;
+	}
+	if xA <= -21 {
+	    imageRotation = 1;
+	}
+	
+	
+	
         var irot = imageRotation.toString();
 	var imgname  = gift.concat(irot).concat(ping);
 	document.getElementById("myImage").src = imgname;    
 }
 </script>
-  </body><p style="text-align:center"><img id="myImage" src="snowglobe_180.jpg" alt="" height="500" width="500"></p?
+  </body><p style="text-align:center"><img id="myImage" src="gift_22.png" alt="" height="250" width="400"></p?
 </html>		
